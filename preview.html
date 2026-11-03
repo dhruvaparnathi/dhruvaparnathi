@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhruv Aparnathi - GitHub Profile README Preview</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown-dark.min.css">
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+      padding: 40px 20px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .preview-container {
+      max-width: 920px;
+      width: 100%;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+    .theme-switcher {
+      margin-bottom: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .theme-btn {
+      background: #21262d;
+      border: 1px solid #30363d;
+      color: #f0f6fc;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .theme-btn:hover, .theme-btn.active {
+      background: #00f5d4;
+      color: #090d16;
+      border-color: #00f5d4;
+    }
+    .markdown-body table {
+      display: table !important;
+      width: 100% !important;
+      background: transparent !important;
+      border-collapse: separate !important;
+      border-spacing: 0 !important;
+      border: 1px solid #30363d !important;
+      border-radius: 8px !important;
+      overflow: hidden !important;
+    }
+    .markdown-body table td, .markdown-body table th {
+      border: 1px solid #21262d !important;
+      background: rgba(13, 17, 23, 0.7) !important;
+    }
+    img {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="theme-switcher">
+    <span style="display:flex; align-items:center; font-weight:600; font-size:14px; margin-right:8px;">🎨 Aesthetic Modes:</span>
+    <button class="theme-btn active" onclick="alert('Current default: Cyber-Neo OS (Cyan + Violet)')">Cyber-Neo OS (Default)</button>
+    <button class="theme-btn" onclick="alert('Check THEMES.md for 1-click Persona 5 Crimson theme!')">Persona 5 (Crimson)</button>
+    <button class="theme-btn" onclick="alert('Check THEMES.md for 1-click Tokyo Ghoul Synthwave theme!')">Tokyo Ghoul (Dark Synthwave)</button>
+  </div>
+
+  <div class="preview-container markdown-body" id="content">
+    <!-- Content from README rendered here -->
+    <div id="readme-html"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    fetch('README.md')
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById('readme-html').innerHTML = marked.parse(text);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
+
